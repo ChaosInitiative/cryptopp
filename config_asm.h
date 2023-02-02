@@ -91,11 +91,11 @@
 	#endif
 #endif
 
-#if defined(_MSC_VER) && defined(_M_X64)
+#if defined(_MSC_VER) && defined(_M_X64) && !defined(__clang__)
 	#define CRYPTOPP_X64_MASM_AVAILABLE 1
 #endif
 
-#if defined(__GNUC__) && defined(__x86_64__)
+#if (defined(__clang__) || defined(__GNUC__)) && defined(__x86_64__)
 	#define CRYPTOPP_X64_ASM_AVAILABLE 1
 #endif
 
